@@ -25,6 +25,10 @@
 		5EB8EE692752D24800B2035F /* RepoListRouterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8EE682752D24800B2035F /* RepoListRouterImplementation.swift */; };
 		5EB8EE6B2752D35200B2035F /* RepoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8EE6A2752D35200B2035F /* RepoListView.swift */; };
 		5EB8EE6D2752D94900B2035F /* RepoListUILayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8EE6C2752D94900B2035F /* RepoListUILayout.swift */; };
+		5EB8EE70275398F700B2035F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8EE6F275398F700B2035F /* Constants.swift */; };
+		5EB8EE732753F77900B2035F /* RepoListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8EE722753F77900B2035F /* RepoListTableCell.swift */; };
+		5EB8EE782753F7BD00B2035F /* RepoListTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8EE772753F7BD00B2035F /* RepoListTableCellView.swift */; };
+		5EB8EE7B2753F89900B2035F /* UsesAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8EE7A2753F89900B2035F /* UsesAutoLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,10 @@
 		5EB8EE682752D24800B2035F /* RepoListRouterImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListRouterImplementation.swift; sourceTree = "<group>"; };
 		5EB8EE6A2752D35200B2035F /* RepoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListView.swift; sourceTree = "<group>"; };
 		5EB8EE6C2752D94900B2035F /* RepoListUILayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListUILayout.swift; sourceTree = "<group>"; };
+		5EB8EE6F275398F700B2035F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5EB8EE722753F77900B2035F /* RepoListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListTableCell.swift; sourceTree = "<group>"; };
+		5EB8EE772753F7BD00B2035F /* RepoListTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListTableCellView.swift; sourceTree = "<group>"; };
+		5EB8EE7A2753F89900B2035F /* UsesAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsesAutoLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +128,9 @@
 			isa = PBXGroup;
 			children = (
 				5EB8EE4E2752CDD400B2035F /* App */,
+				5EB8EE712753F75A00B2035F /* TableCells */,
 				5EB8EE4F2752CDE900B2035F /* Scenes */,
+				5EB8EE792753F88800B2035F /* Utilities */,
 				5EB8EE502752CE6A00B2035F /* Resources */,
 				5EB8EE292752CA6900B2035F /* LaunchScreen.storyboard */,
 				5EB8EE2C2752CA6900B2035F /* Info.plist */,
@@ -168,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				5EB8EE272752CA6900B2035F /* Assets.xcassets */,
+				5EB8EE6F275398F700B2035F /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -228,6 +239,31 @@
 				5EB8EE602752D1F400B2035F /* RepoListPresenterImplementation.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5EB8EE712753F75A00B2035F /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				5EB8EE742753F79000B2035F /* RepoListTableCell */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		5EB8EE742753F79000B2035F /* RepoListTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				5EB8EE772753F7BD00B2035F /* RepoListTableCellView.swift */,
+				5EB8EE722753F77900B2035F /* RepoListTableCell.swift */,
+			);
+			path = RepoListTableCell;
+			sourceTree = "<group>";
+		};
+		5EB8EE792753F88800B2035F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5EB8EE7A2753F89900B2035F /* UsesAutoLayout.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,13 +421,17 @@
 				5EB8EE632752D20B00B2035F /* RepoListWorker.swift in Sources */,
 				5EB8EE542752CFB200B2035F /* RepoListViewController.swift in Sources */,
 				5EB8EE262752CA6700B2035F /* LookGitUp.xcdatamodeld in Sources */,
+				5EB8EE70275398F700B2035F /* Constants.swift in Sources */,
 				5EB8EE5F2752D1E100B2035F /* RepoListPresenter.swift in Sources */,
 				5EB8EE692752D24800B2035F /* RepoListRouterImplementation.swift in Sources */,
 				5EB8EE1C2752CA6700B2035F /* AppDelegate.swift in Sources */,
 				5EB8EE572752D0D200B2035F /* RepoListConfigurator.swift in Sources */,
+				5EB8EE7B2753F89900B2035F /* UsesAutoLayout.swift in Sources */,
 				5EB8EE1E2752CA6700B2035F /* SceneDelegate.swift in Sources */,
 				5EB8EE652752D21E00B2035F /* RepoListWorkerImplementation.swift in Sources */,
+				5EB8EE732753F77900B2035F /* RepoListTableCell.swift in Sources */,
 				5EB8EE6B2752D35200B2035F /* RepoListView.swift in Sources */,
+				5EB8EE782753F7BD00B2035F /* RepoListTableCellView.swift in Sources */,
 				5EB8EE672752D23700B2035F /* RepoListRouter.swift in Sources */,
 				5EB8EE6D2752D94900B2035F /* RepoListUILayout.swift in Sources */,
 			);

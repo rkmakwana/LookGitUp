@@ -8,48 +8,32 @@
 import Foundation
 import UIKit
 
-// MARK:- Create UI
+// MARK: - Create UI
 extension RepoListViewController {
-    
-    // No storyboard or xib used, keeping the view controller lean.
     // Creating the UI and binding it using loadView() in this file seperately.
-    
+
     override func loadView() {
         super.loadView()
-        
+
         view.backgroundColor = .white
         safeArea = view.layoutMarginsGuide
-        
+
         navigationBarAppearance()
         setuptableView()
-//        setupSearchControl()
-        setupNoFeedsView()
+        setupSearchControl()
+//        setupNoResultsView()
         setupLoader()
     }
-    
+
     func navigationBarAppearance() {
-        self.title = "Search Github"
-        if #available(iOS 13.0, *) {
-            let navBarAppearance = UINavigationBarAppearance()
-            navBarAppearance.configureWithOpaqueBackground()
-            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-            navBarAppearance.backgroundColor = .systemGreen
-            navigationController?.navigationBar.standardAppearance = navBarAppearance
-            navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-        } else {
-            navigationController?.navigationBar.barTintColor = .systemGreen
-            navigationController?.navigationBar.tintColor = .white
-            navigationController?.navigationBar.isTranslucent = false
-            navigationItem.title = title
-        }
-        navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.navigationBar.tintColor = .white
+        self.title = AppConstants.title
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationItem.hidesSearchBarWhenScrolling = false
     }
-    
+
     func setuptableView() {
         tableView = UITableView()
-        
+
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
@@ -59,15 +43,13 @@ extension RepoListViewController {
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
-        
-//        tableView.dataSource = self
-//        tableView.delegate = self
-//
-//        tableView.register(NewsItemCollectionCell.self, forCellWithReuseIdentifier: cellIdentifier)
-        
-//        tableView.backgroundColor = AppColors.secondaryBackground
+
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(RepoListTableCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView.tableFooterView = UIView()
     }
-    
+
     func setupLoader() {
         if #available(iOS 13.0, *) {
             loader = UIActivityIndicatorView(style: .large)
@@ -78,18 +60,15 @@ extension RepoListViewController {
         loader.hidesWhenStopped = true
         view.addSubview(loader)
     }
-    
+
     func setupSearchControl() {
         searchController = UISearchController()
         searchController.searchBar.searchBarStyle = .prominent
-        searchController.searchBar.tintColor = .white
         navigationItem.searchController = searchController
-//        searchController.searchResultsUpdater = self
-//        searchController.delegate = self
-        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
     }
-    
-    func setupNoFeedsView() {
+
+    func setupNoResultsView() {
         let container = UIView()
         view.addSubview(container)
         container.translatesAutoresizingMaskIntoConstraints = false
@@ -100,50 +79,33 @@ extension RepoListViewController {
             container.rightAnchor.constraint(equalTo: view.rightAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
-        
+
+        let iconImageView = UIImageView()
+        iconImageView.contentMode = .scaleAspectFit
+        iconImageView.image = UIImage(named: ImageNames.githubIcon)
+        container.addSubview(iconImageView)
+        iconImageView.translatesAutoresizingMaskIntoConstraints = false
+        constraints = [
+            iconImageView.centerYAnchor.constraint(equalTo: container.centerYAnchor, constant: -20),
+            iconImageView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            iconImageView.widthAnchor.constraint(equalToConstant: 40),
+            iconImageView.heightAnchor.constraint(equalToConstant: 40)
+        ]
+        NSLayoutConstraint.activate(constraints)
+
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-//        imageView.image = UIImage(named: ImageNames.noRecords)
+        imageView.image = UIImage(named: ImageNames.lookingup)
         container.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         constraints = [
-            imageView.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 0.5),
-            imageView.centerYAnchor.constraint(equalTo: container.centerYAnchor, constant: -60),
-            imageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            imageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
+            imageView.bottomAnchor.constraint(equalTo: iconImageView.topAnchor),
+            imageView.centerXAnchor.constraint(equalTo: iconImageView.centerXAnchor),
+            imageView.widthAnchor.constraint(equalToConstant: 160),
+            imageView.heightAnchor.constraint(equalToConstant: 120)
         ]
         NSLayoutConstraint.activate(constraints)
-        
-        let label = UILabel()
-        label.text = "No results found"
-        label.font = UIFont.boldSystemFont(ofSize: 26)
-        label.textColor = .systemPink
-        container.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        constraints = [
-            label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
-            label.centerXAnchor.constraint(equalTo: imageView.centerXAnchor)
-        ]
-        NSLayoutConstraint.activate(constraints)
-        
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 46))
-        button.setTitle("Try again", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
-        button.showsTouchWhenHighlighted = true
-//        button.addTarget(self, action: #selector(retry(_:)), for: .touchUpInside)
-        container.addSubview(button)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.isUserInteractionEnabled = true
-        constraints = [
-            button.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 20),
-            button.centerXAnchor.constraint(equalTo: label.centerXAnchor)
-        ]
-        NSLayoutConstraint.activate(constraints)
-        
-        
-        noResultsView = container
-        noResultsView.isHidden = true
-    }
-    
-}
 
+        noResultsView = container
+    }
+}

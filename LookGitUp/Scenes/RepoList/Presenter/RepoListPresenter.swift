@@ -14,5 +14,4 @@ protocol RepoListPresenter {
 //    func configure(cell: NewsItemView, for indexPath: IndexPath)
 //    func setSearch(active: Bool)
 //    func search(for key: String)
-    
 }

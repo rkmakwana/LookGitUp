@@ -7,7 +7,7 @@
 
 import Foundation
 
-//typealias FetchNewsCompletionHandler = (_ response: [News]?, _ error: Error?) -> Void
+// typealias FetchNewsCompletionHandler = (_ response: [News]?, _ error: Error?) -> Void
 
 protocol RepoListWorker {
 //    func getNews(completion: @escaping FetchNewsCompletionHandler)

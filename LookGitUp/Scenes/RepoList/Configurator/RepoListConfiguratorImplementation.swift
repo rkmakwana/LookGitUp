@@ -8,7 +8,6 @@
 import Foundation
 
 class RepoListConfiguratorImplementation: RepoListConfigurator {
-    
     func configure(viewController: RepoListViewController) {
         let router = RepoListRouterImplementation(viewController: viewController)
         let worker = RepoListWorkerImplementation()
@@ -17,5 +16,4 @@ class RepoListConfiguratorImplementation: RepoListConfigurator {
                                                         router: router)
         viewController.presenter = presenter
     }
-    
 }
