@@ -15,7 +15,7 @@ extension RepoListViewController {
     override func loadView() {
         super.loadView()
 
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         safeArea = view.layoutMarginsGuide
 
         navigationBarAppearance()
@@ -29,6 +29,7 @@ extension RepoListViewController {
         self.title = AppConstants.title
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.hidesSearchBarWhenScrolling = false
+//        navigationController?.navigationBar.barStyle = .default
     }
 
     func setuptableView() {
@@ -66,6 +67,7 @@ extension RepoListViewController {
         searchController.searchBar.searchBarStyle = .prominent
         navigationItem.searchController = searchController
         searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
     }
 
     func setupNoResultsView() {

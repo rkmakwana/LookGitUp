@@ -16,34 +16,52 @@ class RepoListTableCell: UITableViewCell {
     }
 
     func setupLabels() {
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(dateLabel)
-        contentView.addSubview(authorLabel)
+        contentView.addSubview(repoNameLabel)
+        contentView.addSubview(starsLabel)
+        contentView.addSubview(languageLabel)
+        contentView.addSubview(languageBullet)
+        contentView.addSubview(starImgView)
 
         var constraints = [
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor,
+            repoNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor,
                                             constant: 12.0),
-            titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor,
+            repoNameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor,
                                              constant: 20.0),
-            titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor,
+            repoNameLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor,
                                               constant: -20.0)
         ]
         NSLayoutConstraint.activate(constraints)
 
         constraints = [
-            dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
-                                            constant: 10.0),
-            dateLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor,
-                                             constant: 20.0)
+            languageBullet.leftAnchor.constraint(equalTo: repoNameLabel.leftAnchor),
+            languageBullet.widthAnchor.constraint(equalToConstant: 10.0),
+            languageBullet.heightAnchor.constraint(equalToConstant: 10.0),
+            languageBullet.centerYAnchor.constraint(equalTo: languageLabel.centerYAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
 
         constraints = [
-            authorLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor,
+            languageLabel.topAnchor.constraint(equalTo: repoNameLabel.bottomAnchor,
                                             constant: 10.0),
-            authorLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor,
-                                             constant: 20.0),
-            authorLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
+            languageLabel.leftAnchor.constraint(equalTo: languageBullet.rightAnchor,
+                                             constant: 8.0)
+        ]
+        NSLayoutConstraint.activate(constraints)
+
+        constraints = [
+            starImgView.widthAnchor.constraint(equalToConstant: 14.0),
+            starImgView.heightAnchor.constraint(equalToConstant: 14.0),
+            starImgView.centerYAnchor.constraint(equalTo: starsLabel.centerYAnchor),
+            starImgView.leftAnchor.constraint(equalTo: languageBullet.leftAnchor)
+        ]
+        NSLayoutConstraint.activate(constraints)
+
+        constraints = [
+            starsLabel.topAnchor.constraint(equalTo: languageLabel.bottomAnchor,
+                                            constant: 10.0),
+            starsLabel.leftAnchor.constraint(equalTo: starImgView.rightAnchor,
+                                             constant: 8.0),
+            starsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
                                             constant: -10.0)
         ]
         NSLayoutConstraint.activate(constraints)
@@ -54,30 +72,54 @@ class RepoListTableCell: UITableViewCell {
     }
 
     @UsesAutoLayout
-    var titleLabel: UILabel = {
+    var repoNameLabel: UILabel = {
         let label = UILabel()
-        label.font = AppFonts.largeTitleLbl
+        label.font = AppFonts.cellTitleLbl
         label.textColor = UIColor.label
-        label.text = "In case you need more time, please keep me informed."
+        label.text = "Unknown"
         label.numberOfLines = 2
         return label
     }()
 
     @UsesAutoLayout
-    var dateLabel: UILabel = {
+    var starsLabel: UILabel = {
         let label = UILabel()
-        label.font = AppFonts.cellSubtitleLbl
+        label.font = AppFonts.cellSecondaryLbl
         label.textColor = UIColor.secondaryLabel
-        label.text = "August 23, 2021"
+        label.text = "0"
         return label
     }()
 
     @UsesAutoLayout
-    var authorLabel: UILabel = {
+    var languageLabel: UILabel = {
         let label = UILabel()
         label.font = AppFonts.cellSubtitleLbl
         label.textColor = UIColor.tertiaryLabel
-        label.text = "By Someone"
+        label.text = "Unspecified"
         return label
     }()
+
+    @UsesAutoLayout
+    var languageBullet: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 5.0
+        view.layer.masksToBounds = true
+        return view
+    }()
+
+    @UsesAutoLayout
+    var starImgView: UIImageView = {
+        let starImgView = UIImageView()
+        starImgView.image = UIImage(named: ImageNames.star)
+        return starImgView
+    }()
+}
+
+extension RepoListTableCell: RepoListItemView {
+    func updateItem(with repo: Repo) {
+        repoNameLabel.text = repo.name
+        languageLabel.text = repo.language
+        starsLabel.text = String(repo.stars)
+        languageBullet.backgroundColor = repo.languageColor()
+    }
 }

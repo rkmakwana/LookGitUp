@@ -16,7 +16,7 @@ public enum AppConstants {
 }
 
 public enum Endpoints {
-    static let fetchNews = "http://newsapi.org/v2/top-headlines?country=in"
+    static let fetchResults = "https://api.github.com/search/repositories"
 }
 
 public enum ImageNames {
@@ -24,11 +24,15 @@ public enum ImageNames {
     static let unselectedCheckMark = "unselected"
     static let lookingup = "lookingup"
     static let githubIcon = "githubIcon"
+    static let star = "star"
 }
 
 public enum AppFonts {
-    static let cellTitleLbl = UIFont(name: "HelveticaNeue-Medium", size: 15.0)!
-    static let cellSubtitleLbl = UIFont(name: "HelveticaNeue-Thin", size: 13.0)!
-    static let largeTitleLbl = UIFont(name: "HelveticaNeue-Bold", size: 18.0)!
-    static let descriptionLbl = UIFont(name: "HelveticaNeue", size: 13.0)!
+    static let cellTitleLbl = UIFont(name: "HelveticaNeue-Bold", size: 15.0)!
+    static let cellSubtitleLbl = UIFont(name: "HelveticaNeue-Medium", size: 14.0)!
+    static let cellSecondaryLbl = UIFont(name: "HelveticaNeue-Thin", size: 16.0)!
+}
+
+public enum ErrorMessages {
+    static let searchFailed = "Unable to fetch search results"
 }

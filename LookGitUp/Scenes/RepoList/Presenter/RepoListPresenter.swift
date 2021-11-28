@@ -9,9 +9,8 @@ import Foundation
 
 protocol RepoListPresenter {
     var numberOfItems: Int { get }
-    func viewDidLoad()
 //    func select(cell: NewsItemView, for indexPath: IndexPath)
-//    func configure(cell: NewsItemView, for indexPath: IndexPath)
+    func configure(cell: RepoListItemView, at index: Int)
 //    func setSearch(active: Bool)
-//    func search(for key: String)
+    func search(for key: String)
 }

@@ -8,4 +8,6 @@
 import Foundation
 
 protocol RepoListView {
+    func refreshList()
+    func displayError(title: String, message: String)
 }

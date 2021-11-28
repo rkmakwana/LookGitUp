@@ -7,8 +7,6 @@
 
 import Foundation
 
-// typealias FetchNewsCompletionHandler = (_ response: [News]?, _ error: Error?) -> Void
-
 protocol RepoListWorker {
-//    func getNews(completion: @escaping FetchNewsCompletionHandler)
+    func getSearchResults(searchQuery: String, completion: @escaping ((Result<[Repo], Error>) -> Void))
 }

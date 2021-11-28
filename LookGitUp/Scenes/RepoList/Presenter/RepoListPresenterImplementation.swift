@@ -11,7 +11,7 @@ class RepoListPresenterImplementation: RepoListPresenter {
     let view: RepoListView
     let worker: RepoListWorker
     let router: RepoListRouter
-//    var newsList = [News]()
+    var repos = [Repo]()
 
     init(view: RepoListView, worker: RepoListWorker, router: RepoListRouter) {
         self.view = view
@@ -20,10 +20,23 @@ class RepoListPresenterImplementation: RepoListPresenter {
     }
 
     var numberOfItems: Int {
-        0
+        repos.count
     }
 
-    func viewDidLoad() {
-        print("LOL I am loaded")
+    func configure(cell: RepoListItemView, at index: Int) {
+        cell.updateItem(with: repos[index])
+    }
+
+    func search(for key: String) {
+        worker.getSearchResults(searchQuery: key) { [weak self] result in
+            switch result {
+            case .success(let repos):
+                self?.repos = repos
+                self?.view.refreshList()
+            case .failure(let error):
+                self?.view.displayError(title: "Error",
+                                        message: "\(ErrorMessages.searchFailed) - \(error.localizedDescription)")
+            }
+        }
     }
 }

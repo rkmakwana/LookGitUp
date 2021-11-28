@@ -20,29 +20,42 @@ class RepoListViewController: UIViewController, RepoListView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        presenter.viewDidLoad()
     }
 
+    func refreshList() {
+        tableView.reloadData()
+    }
+
+    func displayError(title: String, message: String) {
+        self.showAlert(title: title,
+                       message: message)
+    }
 }
 
 extension RepoListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-//        return presenter.numberOfItems
+        return presenter.numberOfItems
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? RepoListTableCell else {
             fatalError("Unable to dequeue table cell")
         }
+        presenter.configure(cell: cell, at: indexPath.row)
         return cell
     }
 
 }
 
-extension RepoListViewController: UISearchBarDelegate {
+extension RepoListViewController: UISearchBarDelegate, UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let key = searchController.searchBar.text, !key.isEmpty else { return }
+        presenter.search(for: key)
+    }
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("START SEARCHING BHIDU")
+        guard let key = searchBar.text else { return }
+        presenter.search(for: key)
+        searchController.dismiss(animated: true, completion: nil)
     }
 }
