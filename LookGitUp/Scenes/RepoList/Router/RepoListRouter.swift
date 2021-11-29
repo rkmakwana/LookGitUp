@@ -8,5 +8,5 @@
 import Foundation
 
 protocol RepoListRouter {
-//    func presentDetailsView(for item: News, cell: NewsItemView)
+    func showDetails(for repo: Repo)
 }

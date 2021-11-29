@@ -12,7 +12,6 @@ class RepoListViewController: UIViewController, RepoListView {
 
     var tableView: UITableView!
     var noResultsView: UIView!
-    var loader: UIActivityIndicatorView!
     var safeArea: UILayoutGuide!
     var searchController: UISearchController!
 
@@ -43,6 +42,11 @@ extension RepoListViewController: UITableViewDataSource, UITableViewDelegate {
         }
         presenter.configure(cell: cell, at: indexPath.row)
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        presenter.showDetails(index: indexPath.row)
     }
 
 }

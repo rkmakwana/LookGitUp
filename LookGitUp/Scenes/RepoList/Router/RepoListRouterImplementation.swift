@@ -9,18 +9,16 @@ import Foundation
 
 class RepoListRouterImplementation: RepoListRouter {
     private weak var viewController: RepoListViewController?
-//    private var news: News!
 
     init(viewController: RepoListViewController) {
         self.viewController = viewController
-//        self.listViewController?.navigationController?.delegate = self
     }
 
-//    func presentDetailsView(for item: News, cell: NewsItemView) {
-//        self.news = item
-//
-//     contactDetailViewController.configurator = ContactDetailConfiguratorImplementation(contact: contact,
-//                                                                                           delegate: detailDelegate)
-//        contactListViewController?.performSegue(withIdentifier: Constants.SegueIdentifiers.showDetails, sender: nil)
-//    }
+    func showDetails(for repo: Repo) {
+        let detailconfigurator = RepoDetailsConfiguratorImplementation()
+        let detailsViewController = RepoDetailsViewController()
+        detailconfigurator.configure(viewController: detailsViewController,
+                                     repo: repo)
+        viewController?.show(detailsViewController, sender: nil)
+    }
 }

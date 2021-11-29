@@ -22,7 +22,6 @@ extension RepoListViewController {
         setuptableView()
         setupSearchControl()
 //        setupNoResultsView()
-        setupLoader()
     }
 
     func navigationBarAppearance() {
@@ -51,23 +50,13 @@ extension RepoListViewController {
         tableView.tableFooterView = UIView()
     }
 
-    func setupLoader() {
-        if #available(iOS 13.0, *) {
-            loader = UIActivityIndicatorView(style: .large)
-        } else {
-            loader = UIActivityIndicatorView(style: .gray)
-        }
-        loader.center = self.view.center
-        loader.hidesWhenStopped = true
-        view.addSubview(loader)
-    }
-
     func setupSearchControl() {
         searchController = UISearchController()
         searchController.searchBar.searchBarStyle = .prominent
         navigationItem.searchController = searchController
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
     }
 
     func setupNoResultsView() {

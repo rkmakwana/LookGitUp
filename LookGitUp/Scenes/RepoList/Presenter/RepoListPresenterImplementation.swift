@@ -27,6 +27,10 @@ class RepoListPresenterImplementation: RepoListPresenter {
         cell.updateItem(with: repos[index])
     }
 
+    func showDetails(index: Int) {
+        router.showDetails(for: repos[index])
+    }
+
     func search(for key: String) {
         worker.getSearchResults(searchQuery: key) { [weak self] result in
             switch result {
