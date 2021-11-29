@@ -8,4 +8,6 @@
 import Foundation
 
 protocol RepoDetailsView {
+    func setDetails()
+    func setLikeDislike()
 }

@@ -13,17 +13,23 @@ struct Repo: Codable {
     let name: String
     let language: String?
     let stars: Int
+    let description: String?
+    let createdAt: String
+    let owner: Owner
 
     enum CodingKeys: String, CodingKey {
         case id
         case name = "full_name"
         case language
         case stars = "stargazers_count"
+        case description
+        case createdAt = "created_at"
+        case owner
     }
 
-    func languageColor() -> UIColor {
+    func languageColor() -> String {
         guard let lang = self.language else {
-            return .black
+            return "#ffffff" // Black
         }
         var total: Int = 5 // Initialised with 5 just to get good looking color sets. Totally random! :)
         for uni in lang.unicodeScalars {
@@ -35,6 +41,7 @@ struct Repo: Codable {
         let green = CGFloat(drand48())
         srand48(total / 200)
         let blue = CGFloat(drand48())
-        return UIColor(red: red, green: green, blue: blue, alpha: 1)
+        let rgb: Int = (Int)(red*255)<<16 | (Int)(green*255)<<8 | (Int)(blue*255)<<0
+        return String(format: "#%06x", rgb)
     }
 }

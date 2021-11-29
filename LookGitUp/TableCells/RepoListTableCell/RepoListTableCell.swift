@@ -120,6 +120,7 @@ extension RepoListTableCell: RepoListItemView {
         repoNameLabel.text = repo.name
         languageLabel.text = repo.language
         starsLabel.text = String(repo.stars)
-        languageBullet.backgroundColor = repo.languageColor()
+        let colorHex = repo.languageColor()
+        languageBullet.backgroundColor = UIColor(hex: colorHex)
     }
 }

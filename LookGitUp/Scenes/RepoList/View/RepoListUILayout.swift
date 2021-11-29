@@ -28,7 +28,6 @@ extension RepoListViewController {
         self.title = AppConstants.title
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.hidesSearchBarWhenScrolling = false
-//        navigationController?.navigationBar.barStyle = .default
     }
 
     func setuptableView() {
