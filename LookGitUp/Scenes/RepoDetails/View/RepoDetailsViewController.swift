@@ -145,4 +145,8 @@ extension RepoDetailsViewController: RepoDetailsView {
             dislikeButton.setImage(UIImage(named: ImageNames.dislike), for: .normal)
         }
     }
+
+    func displayAlert(title: String, message: String) {
+        self.showAlert(title: title, message: message)
+    }
 }

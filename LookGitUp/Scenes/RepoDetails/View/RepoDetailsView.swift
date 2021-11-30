@@ -10,4 +10,5 @@ import Foundation
 protocol RepoDetailsView {
     func setDetails()
     func setLikeDislike()
+    func displayAlert(title: String, message: String)
 }

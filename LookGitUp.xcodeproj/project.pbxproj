@@ -168,7 +168,7 @@
 				5EB8EE502752CE6A00B2035F /* Resources */,
 				5EB8EE292752CA6900B2035F /* LaunchScreen.storyboard */,
 				5EB8EE2C2752CA6900B2035F /* Info.plist */,
-				5EB8EE242752CA6700B2035F /* LookGitUp.xcdatamodeld */,
+				5ED3632427560FA700CEFC61 /* CoreData */,
 			);
 			path = LookGitUp;
 			sourceTree = "<group>";
@@ -334,7 +334,6 @@
 			isa = PBXGroup;
 			children = (
 				5EB8EE8E2754B7A700B2035F /* Configurator */,
-				5EB8EE8D2754B7A000B2035F /* Router */,
 				5EB8EE8C2754B79A00B2035F /* Worker */,
 				5EB8EE8B2754B79400B2035F /* Presenter */,
 				5EB8EE8A2754B78600B2035F /* View */,
@@ -370,13 +369,6 @@
 			path = Worker;
 			sourceTree = "<group>";
 		};
-		5EB8EE8D2754B7A000B2035F /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
 		5EB8EE8E2754B7A700B2035F /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +376,14 @@
 				5EB8EE9F2754B89100B2035F /* RepoDetailsConfiguratorImplementation.swift */,
 			);
 			path = Configurator;
+			sourceTree = "<group>";
+		};
+		5ED3632427560FA700CEFC61 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5EB8EE242752CA6700B2035F /* LookGitUp.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

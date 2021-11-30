@@ -41,4 +41,6 @@ public enum AppFonts {
 
 public enum ErrorMessages {
     static let searchFailed = "Unable to fetch search results"
+    static let likeDislikeFailed = "Unable to process your action"
+    static let likeDislikeFetchFailed = "Unable to access the database"
 }

@@ -71,6 +71,14 @@ class RepoDetailsPresenterImplementation: RepoDetailsPresenter {
     }
 
     func viewDidLoad() {
+        do {
+            let status = try worker.getLikeStatus(repoId: repo.id)
+            liked = status.liked
+            disliked = status.disliked
+        } catch {
+            view.displayAlert(title: "Error", message: ErrorMessages.likeDislikeFetchFailed)
+        }
+
         view.setDetails()
         view.setLikeDislike()
     }
@@ -79,11 +87,18 @@ class RepoDetailsPresenterImplementation: RepoDetailsPresenter {
         liked.toggle()
         disliked = false
         view.setLikeDislike()
+
+        do {
+            try worker.setLikeStatus(repoId: repo.id, liked: liked, disliked: disliked)
+        } catch {
+            view.displayAlert(title: "Error", message: ErrorMessages.likeDislikeFailed)
+        }
     }
 
     func changedDislikeStatus() {
         disliked.toggle()
         liked = false
         view.setLikeDislike()
+        worker.setLikeStatus(repoId: repo.id, liked: liked, disliked: disliked)
     }
 }
