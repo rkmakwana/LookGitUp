@@ -14,13 +14,13 @@ protocol APIEndpoint {
 class NetworkClient {
 
     enum APIError: Error {
-        case unauthorised
         case invalidEndpoint
         case errorResponseDetected
         case decodingError
         case noData
     }
 
+    static var session = URLSession.shared
     // MARK: - Create URL Request
 
     public static func urlRequest(from request: APIEndpoint) -> URLRequest? {
@@ -44,7 +44,7 @@ class NetworkClient {
         }
         endpointRequest.httpMethod = "GET"
 
-        URLSession.shared.dataTask(
+        session.dataTask(
             with: endpointRequest,
             completionHandler: { (data, urlResponse, error) in
                 DispatchQueue.main.async {

@@ -15,8 +15,6 @@
 		5EB8EE262752CA6700B2035F /* LookGitUp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8EE242752CA6700B2035F /* LookGitUp.xcdatamodeld */; };
 		5EB8EE282752CA6900B2035F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EB8EE272752CA6900B2035F /* Assets.xcassets */; };
 		5EB8EE2B2752CA6900B2035F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EB8EE292752CA6900B2035F /* LaunchScreen.storyboard */; };
-		5EB8EE362752CA6900B2035F /* LookGitUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8EE352752CA6900B2035F /* LookGitUpTests.swift */; };
-		5EB8EE412752CA6900B2035F /* LookGitUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8EE402752CA6900B2035F /* LookGitUpUITests.swift */; };
 		5EB8EE542752CFB200B2035F /* RepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8EE532752CFB200B2035F /* RepoListViewController.swift */; };
 		5EB8EE572752D0D200B2035F /* RepoListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8EE562752D0D200B2035F /* RepoListConfigurator.swift */; };
 		5EB8EE592752D0F800B2035F /* RepoListConfiguratorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8EE582752D0F800B2035F /* RepoListConfiguratorImplementation.swift */; };
@@ -45,17 +43,23 @@
 		5EB8EE9C2754B86800B2035F /* RepoDetailsWorkerImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8EE9B2754B86800B2035F /* RepoDetailsWorkerImplementation.swift */; };
 		5EB8EE9E2754B88000B2035F /* RepoDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8EE9D2754B88000B2035F /* RepoDetailsConfigurator.swift */; };
 		5EB8EEA02754B89100B2035F /* RepoDetailsConfiguratorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8EE9F2754B89100B2035F /* RepoDetailsConfiguratorImplementation.swift */; };
+		5ED3632C2756642100CEFC61 /* RepoListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED3632B2756642100CEFC61 /* RepoListPresenterTests.swift */; };
+		5ED3632F2756650500CEFC61 /* MockRepoListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED3632E2756650500CEFC61 /* MockRepoListWorker.swift */; };
+		5ED363312756659A00CEFC61 /* MockRepoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED363302756659A00CEFC61 /* MockRepoListView.swift */; };
+		5ED363332756670E00CEFC61 /* MockRepoListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED363322756670E00CEFC61 /* MockRepoListRouter.swift */; };
+		5ED363352756748000CEFC61 /* MockRepoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED363342756748000CEFC61 /* MockRepoListItem.swift */; };
+		5ED363382756820700CEFC61 /* RepoDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED363372756820700CEFC61 /* RepoDetailsPresenterTests.swift */; };
+		5ED3633C2756828700CEFC61 /* MockRepoDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED3633B2756828700CEFC61 /* MockRepoDetailsWorker.swift */; };
+		5ED3633E2756829500CEFC61 /* MockRepoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED3633D2756829500CEFC61 /* MockRepoDetailsView.swift */; };
+		5ED3634027568BF900CEFC61 /* MockRepoDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED3633F27568BF900CEFC61 /* MockRepoDetailsConfigurator.swift */; };
+		5ED363442756906000CEFC61 /* MockRepoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED363432756906000CEFC61 /* MockRepoListPresenter.swift */; };
+		5ED363472756918E00CEFC61 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED363462756918E00CEFC61 /* Repo.swift */; };
+		5ED36349275698B100CEFC61 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED36348275698B100CEFC61 /* MockURLSession.swift */; };
+		5ED3634B27569BD400CEFC61 /* RepoListWorkerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED3634A27569BD400CEFC61 /* RepoListWorkerTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		5EB8EE322752CA6900B2035F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5EB8EE102752CA6700B2035F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5EB8EE172752CA6700B2035F;
-			remoteInfo = LookGitUp;
-		};
-		5EB8EE3D2752CA6900B2035F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5EB8EE102752CA6700B2035F /* Project object */;
 			proxyType = 1;
@@ -76,9 +80,7 @@
 		5EB8EE2A2752CA6900B2035F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EB8EE2C2752CA6900B2035F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EB8EE312752CA6900B2035F /* LookGitUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LookGitUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EB8EE352752CA6900B2035F /* LookGitUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookGitUpTests.swift; sourceTree = "<group>"; };
 		5EB8EE372752CA6900B2035F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5EB8EE3C2752CA6900B2035F /* LookGitUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LookGitUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB8EE402752CA6900B2035F /* LookGitUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookGitUpUITests.swift; sourceTree = "<group>"; };
 		5EB8EE422752CA6900B2035F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EB8EE532752CFB200B2035F /* RepoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,19 @@
 		5EB8EE9B2754B86800B2035F /* RepoDetailsWorkerImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsWorkerImplementation.swift; sourceTree = "<group>"; };
 		5EB8EE9D2754B88000B2035F /* RepoDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsConfigurator.swift; sourceTree = "<group>"; };
 		5EB8EE9F2754B89100B2035F /* RepoDetailsConfiguratorImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsConfiguratorImplementation.swift; sourceTree = "<group>"; };
+		5ED3632B2756642100CEFC61 /* RepoListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListPresenterTests.swift; sourceTree = "<group>"; };
+		5ED3632E2756650500CEFC61 /* MockRepoListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepoListWorker.swift; sourceTree = "<group>"; };
+		5ED363302756659A00CEFC61 /* MockRepoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepoListView.swift; sourceTree = "<group>"; };
+		5ED363322756670E00CEFC61 /* MockRepoListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepoListRouter.swift; sourceTree = "<group>"; };
+		5ED363342756748000CEFC61 /* MockRepoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepoListItem.swift; sourceTree = "<group>"; };
+		5ED363372756820700CEFC61 /* RepoDetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsPresenterTests.swift; sourceTree = "<group>"; };
+		5ED3633B2756828700CEFC61 /* MockRepoDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepoDetailsWorker.swift; sourceTree = "<group>"; };
+		5ED3633D2756829500CEFC61 /* MockRepoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepoDetailsView.swift; sourceTree = "<group>"; };
+		5ED3633F27568BF900CEFC61 /* MockRepoDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepoDetailsConfigurator.swift; sourceTree = "<group>"; };
+		5ED363432756906000CEFC61 /* MockRepoListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepoListPresenter.swift; sourceTree = "<group>"; };
+		5ED363462756918E00CEFC61 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		5ED36348275698B100CEFC61 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		5ED3634A27569BD400CEFC61 /* RepoListWorkerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListWorkerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,13 +135,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5EB8EE2E2752CA6900B2035F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5EB8EE392752CA6900B2035F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -151,7 +159,6 @@
 			children = (
 				5EB8EE182752CA6700B2035F /* LookGitUp.app */,
 				5EB8EE312752CA6900B2035F /* LookGitUpTests.xctest */,
-				5EB8EE3C2752CA6900B2035F /* LookGitUpUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,7 +183,11 @@
 		5EB8EE342752CA6900B2035F /* LookGitUpTests */ = {
 			isa = PBXGroup;
 			children = (
-				5EB8EE352752CA6900B2035F /* LookGitUpTests.swift */,
+				5ED363452756918100CEFC61 /* Helpers */,
+				5ED3632D275664DB00CEFC61 /* RepoListMocks */,
+				5ED36329275663FF00CEFC61 /* RepoListTests */,
+				5ED363392756823900CEFC61 /* RepoDetailsMocks */,
+				5ED36336275677C700CEFC61 /* RepoDetailsTest */,
 				5EB8EE372752CA6900B2035F /* Info.plist */,
 			);
 			path = LookGitUpTests;
@@ -386,6 +397,54 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		5ED36329275663FF00CEFC61 /* RepoListTests */ = {
+			isa = PBXGroup;
+			children = (
+				5ED3632B2756642100CEFC61 /* RepoListPresenterTests.swift */,
+				5ED3634A27569BD400CEFC61 /* RepoListWorkerTest.swift */,
+			);
+			path = RepoListTests;
+			sourceTree = "<group>";
+		};
+		5ED3632D275664DB00CEFC61 /* RepoListMocks */ = {
+			isa = PBXGroup;
+			children = (
+				5ED3632E2756650500CEFC61 /* MockRepoListWorker.swift */,
+				5ED363302756659A00CEFC61 /* MockRepoListView.swift */,
+				5ED363322756670E00CEFC61 /* MockRepoListRouter.swift */,
+				5ED363342756748000CEFC61 /* MockRepoListItem.swift */,
+				5ED363432756906000CEFC61 /* MockRepoListPresenter.swift */,
+			);
+			path = RepoListMocks;
+			sourceTree = "<group>";
+		};
+		5ED36336275677C700CEFC61 /* RepoDetailsTest */ = {
+			isa = PBXGroup;
+			children = (
+				5ED363372756820700CEFC61 /* RepoDetailsPresenterTests.swift */,
+			);
+			path = RepoDetailsTest;
+			sourceTree = "<group>";
+		};
+		5ED363392756823900CEFC61 /* RepoDetailsMocks */ = {
+			isa = PBXGroup;
+			children = (
+				5ED3633B2756828700CEFC61 /* MockRepoDetailsWorker.swift */,
+				5ED3633D2756829500CEFC61 /* MockRepoDetailsView.swift */,
+				5ED3633F27568BF900CEFC61 /* MockRepoDetailsConfigurator.swift */,
+			);
+			path = RepoDetailsMocks;
+			sourceTree = "<group>";
+		};
+		5ED363452756918100CEFC61 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5ED363462756918E00CEFC61 /* Repo.swift */,
+				5ED36348275698B100CEFC61 /* MockURLSession.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -425,24 +484,6 @@
 			productReference = 5EB8EE312752CA6900B2035F /* LookGitUpTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5EB8EE3B2752CA6900B2035F /* LookGitUpUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5EB8EE4B2752CA6900B2035F /* Build configuration list for PBXNativeTarget "LookGitUpUITests" */;
-			buildPhases = (
-				5EB8EE382752CA6900B2035F /* Sources */,
-				5EB8EE392752CA6900B2035F /* Frameworks */,
-				5EB8EE3A2752CA6900B2035F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5EB8EE3E2752CA6900B2035F /* PBXTargetDependency */,
-			);
-			name = LookGitUpUITests;
-			productName = LookGitUpUITests;
-			productReference = 5EB8EE3C2752CA6900B2035F /* LookGitUpUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -457,10 +498,7 @@
 					};
 					5EB8EE302752CA6900B2035F = {
 						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = 5EB8EE172752CA6700B2035F;
-					};
-					5EB8EE3B2752CA6900B2035F = {
-						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 						TestTargetID = 5EB8EE172752CA6700B2035F;
 					};
 				};
@@ -480,7 +518,6 @@
 			targets = (
 				5EB8EE172752CA6700B2035F /* LookGitUp */,
 				5EB8EE302752CA6900B2035F /* LookGitUpTests */,
-				5EB8EE3B2752CA6900B2035F /* LookGitUpUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -496,13 +533,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5EB8EE2F2752CA6900B2035F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5EB8EE3A2752CA6900B2035F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -577,15 +607,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EB8EE362752CA6900B2035F /* LookGitUpTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5EB8EE382752CA6900B2035F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5EB8EE412752CA6900B2035F /* LookGitUpUITests.swift in Sources */,
+				5ED36349275698B100CEFC61 /* MockURLSession.swift in Sources */,
+				5ED363332756670E00CEFC61 /* MockRepoListRouter.swift in Sources */,
+				5ED3634027568BF900CEFC61 /* MockRepoDetailsConfigurator.swift in Sources */,
+				5ED363382756820700CEFC61 /* RepoDetailsPresenterTests.swift in Sources */,
+				5ED363472756918E00CEFC61 /* Repo.swift in Sources */,
+				5ED3632C2756642100CEFC61 /* RepoListPresenterTests.swift in Sources */,
+				5ED363352756748000CEFC61 /* MockRepoListItem.swift in Sources */,
+				5ED3634B27569BD400CEFC61 /* RepoListWorkerTest.swift in Sources */,
+				5ED363312756659A00CEFC61 /* MockRepoListView.swift in Sources */,
+				5ED3633E2756829500CEFC61 /* MockRepoDetailsView.swift in Sources */,
+				5ED3633C2756828700CEFC61 /* MockRepoDetailsWorker.swift in Sources */,
+				5ED363442756906000CEFC61 /* MockRepoListPresenter.swift in Sources */,
+				5ED3632F2756650500CEFC61 /* MockRepoListWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,11 +630,6 @@
 			isa = PBXTargetDependency;
 			target = 5EB8EE172752CA6700B2035F /* LookGitUp */;
 			targetProxy = 5EB8EE322752CA6900B2035F /* PBXContainerItemProxy */;
-		};
-		5EB8EE3E2752CA6900B2035F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5EB8EE172752CA6700B2035F /* LookGitUp */;
-			targetProxy = 5EB8EE3D2752CA6900B2035F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -773,6 +802,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LookGitUpTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -783,6 +813,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.brainforked.LookGitUpTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LookGitUp.app/LookGitUp";
@@ -794,6 +826,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LookGitUpTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -804,47 +837,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.brainforked.LookGitUpTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LookGitUp.app/LookGitUp";
-			};
-			name = Release;
-		};
-		5EB8EE4C2752CA6900B2035F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LookGitUpUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.brainforked.LookGitUpUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LookGitUp;
-			};
-			name = Debug;
-		};
-		5EB8EE4D2752CA6900B2035F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LookGitUpUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.brainforked.LookGitUpUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LookGitUp;
 			};
 			name = Release;
 		};
@@ -874,15 +870,6 @@
 			buildConfigurations = (
 				5EB8EE492752CA6900B2035F /* Debug */,
 				5EB8EE4A2752CA6900B2035F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5EB8EE4B2752CA6900B2035F /* Build configuration list for PBXNativeTarget "LookGitUpUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5EB8EE4C2752CA6900B2035F /* Debug */,
-				5EB8EE4D2752CA6900B2035F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

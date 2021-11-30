@@ -21,7 +21,7 @@ extension RepoListViewController {
         navigationBarAppearance()
         setuptableView()
         setupSearchControl()
-//        setupNoResultsView()
+        setupNoResultsView()
     }
 
     func navigationBarAppearance() {
@@ -31,10 +31,7 @@ extension RepoListViewController {
     }
 
     func setuptableView() {
-        tableView = UITableView()
-
         view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
             tableView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
@@ -46,7 +43,6 @@ extension RepoListViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(RepoListTableCell.self, forCellReuseIdentifier: cellIdentifier)
-        tableView.tableFooterView = UIView()
     }
 
     func setupSearchControl() {

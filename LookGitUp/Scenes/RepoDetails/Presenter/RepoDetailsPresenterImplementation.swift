@@ -99,6 +99,10 @@ class RepoDetailsPresenterImplementation: RepoDetailsPresenter {
         disliked.toggle()
         liked = false
         view.setLikeDislike()
-        worker.setLikeStatus(repoId: repo.id, liked: liked, disliked: disliked)
+        do {
+            try worker.setLikeStatus(repoId: repo.id, liked: liked, disliked: disliked)
+        } catch {
+            view.displayAlert(title: "Error", message: ErrorMessages.likeDislikeFailed)
+        }
     }
 }

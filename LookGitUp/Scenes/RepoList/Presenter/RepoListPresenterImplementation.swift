@@ -35,8 +35,13 @@ class RepoListPresenterImplementation: RepoListPresenter {
         worker.getSearchResults(searchQuery: key) { [weak self] result in
             switch result {
             case .success(let repos):
-                self?.repos = repos
-                self?.view.refreshList()
+                if !repos.isEmpty {
+                    self?.repos = repos
+                    self?.view.refreshList()
+                    self?.view.hideNoResultsView()
+                } else {
+                    self?.view.showNoResultsView()
+                }
             case .failure(let error):
                 self?.view.displayError(title: "Error",
                                         message: "\(ErrorMessages.searchFailed) - \(error.localizedDescription)")

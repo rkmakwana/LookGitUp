@@ -10,7 +10,13 @@ import UIKit
 class RepoListViewController: UIViewController, RepoListView {
     var presenter: RepoListPresenter!
 
-    var tableView: UITableView!
+    @UsesAutoLayout
+    var tableView: UITableView = {
+        let tableview = UITableView()
+        tableview.tableFooterView = UIView()
+        return tableview
+    }()
+
     var noResultsView: UIView!
     var safeArea: UILayoutGuide!
     var searchController: UISearchController!
@@ -28,6 +34,14 @@ class RepoListViewController: UIViewController, RepoListView {
     func displayError(title: String, message: String) {
         self.showAlert(title: title,
                        message: message)
+    }
+
+    func showNoResultsView() {
+        noResultsView.isHidden = false
+    }
+
+    func hideNoResultsView() {
+        noResultsView.isHidden = true
     }
 }
 
